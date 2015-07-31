@@ -1,0 +1,22 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "wedding gallery",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xquicky/wedding-gallery.git"
+  },
+  "author": "xmaillot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xquicky/wedding-gallery/issues"
+  },
+  "homepage": "https://github.com/Xquicky/wedding-gallery",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
+}
