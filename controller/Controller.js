@@ -1,4 +1,6 @@
 var _ = require('lodash');
+var handlebars = require('handlebars');
+var fs = require('fs');
 
 var Controller = function Controller(route, method, name) {
   this.route = route;
@@ -7,21 +9,37 @@ var Controller = function Controller(route, method, name) {
 };
 
 Controller.prototype.initRoute = function(app) {
-  console.dir('initialisation de la route : ' + this.route);
   app[this.method](this.route, _.bind(this.control, this));
 };
 
 Controller.prototype.specific = function(req, res) { console.dir('specific par défaut'); };
 
-Controller.prototype.render = function(res) {
-  console.dir('rendu');
-  res.render(this.name);
+Controller.prototype.render = function(req, res, data) {
+  fs.readFile(__dirname + '/../front/views/' + this.name + '.html', 'utf-8', function(err, source) {
+
+    if(err) {
+      res.writeHeader(200, {'Content-Type': 'text/plain'});
+      res.write('404 Not Found\n');
+      return response.end();
+    }
+
+    var template = handlebars.compile(source);
+    var customHtml = template(data);
+
+    if(req.query.contentOnly === 'true') {
+      res.writeHeader(200, {"Content-Type": "text/html"});
+      res.write(customHtml);
+      return res.end();
+    }
+    else {
+      return res.render('index', {content: customHtml});
+    }
+  });
 };
 
 Controller.prototype.control = function(req, res) {
-  console.dir('démarage du control');
-  this.specific(req, res);
-  this.render(res);
+  var data = this.specific(req, res);
+  this.render(req, res, data);
 };
 
 module.exports = Controller;
