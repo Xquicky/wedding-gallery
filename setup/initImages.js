@@ -22,8 +22,10 @@ var initImages = function () {
 
           if(err.code === 'ENOENT') {
             var dimensions = sizeOf(photosPath + '/' + file);
-            var width = 128;
-            var height = (dimensions.height / dimensions.width) * width;
+            var height = 180;
+            var width = (dimensions.width / dimensions.height) * height;
+            // var width = 128;
+            // var height = (dimensions.height / dimensions.width) * width;
             return easyimg.thumbnail({
               src: photosPath + '/' + file,
               dst: fileThumbnailPath + '.jpg',
