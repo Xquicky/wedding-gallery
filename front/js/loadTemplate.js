@@ -14,11 +14,14 @@ $('a').click(function (event) {
 	loadTemplate(url);
 });
 
-$("#wedding-gallery").justifiedGallery({
-  rowHeight : 180,
-  lastRow : 'nojustify',
-  margins : 3
-}).on('jg.complete', function () {
-	console.log('swipebox prepare');
-  $('#wedding-gallery a').swipebox();
-});
+$(document).ready(
+	function() {
+		$("#wedding-gallery").justifiedGallery({
+		  rowHeight : 180,
+		  lastRow : 'nojustify',
+		  margins : 3
+		}).on('jg.complete', function () {
+		  $('#wedding-gallery a').swipebox();
+		});
+	}
+);
