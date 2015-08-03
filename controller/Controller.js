@@ -20,8 +20,8 @@ Controller.prototype.render = function(req, res, data) {
 
     if(err) {
       res.writeHeader(200, {'Content-Type': 'text/plain'});
-      res.write('404 Not Found\n');
-      return response.end();
+      res.write(err);
+      return res.end();
     }
 
     var template = handlebars.compile(source);
