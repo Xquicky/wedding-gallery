@@ -20,7 +20,7 @@ Controller.prototype.render = function(req, res, data) {
 
     if(err) {
       res.writeHeader(200, {'Content-Type': 'text/plain'});
-      res.write(err);
+      res.write(err.stack);
       return res.end();
     }
 
