@@ -12,6 +12,7 @@ app.set('views', __dirname + '/front/views');
 // static resources
 app.use('/front', express.static(__dirname + '/front'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/images', express.static(__dirname + '/images'));
 
 // init controller
 initControllers(app);

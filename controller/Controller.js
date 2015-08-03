@@ -12,7 +12,7 @@ Controller.prototype.initRoute = function(app) {
   app[this.method](this.route, _.bind(this.control, this));
 };
 
-Controller.prototype.specific = function(req, res) { console.dir('specific par défaut'); };
+Controller.prototype.specific = function(req, res, callback) { callback(req, res); };
 
 Controller.prototype.render = function(req, res, data) {
   fs.readFile(__dirname + '/../front/views/' + this.name + '.html', 'utf-8', function(err, source) {
@@ -26,6 +26,11 @@ Controller.prototype.render = function(req, res, data) {
     var template = handlebars.compile(source);
     var customHtml = template(data);
 
+    console.dir('data');
+    console.dir(data);
+    console.dir('compilation');
+    console.dir(customHtml);
+
     if(req.query.contentOnly === 'true') {
       res.writeHeader(200, {"Content-Type": "text/html"});
       res.write(customHtml);
@@ -38,8 +43,7 @@ Controller.prototype.render = function(req, res, data) {
 };
 
 Controller.prototype.control = function(req, res) {
-  var data = this.specific(req, res);
-  this.render(req, res, data);
+  var data = this.specific(req, res, _.bind(this.render, this));
 };
 
 module.exports = Controller;

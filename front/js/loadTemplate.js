@@ -3,7 +3,6 @@ loadTemplate = function(name) {
 	$.ajax({
 		url : '/' + name,
 		success : function(content) {
-			console.dir(content);
 			$("#content").html(content);
 		},
 	});
