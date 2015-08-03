@@ -1,0 +1,21 @@
+{
+  "name": "wedding",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Xquicky/wedding-gallery",
+  "authors": [
+    "Xavier Maillot <xmaillot@viadeoteam.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Justified-Gallery": "~3.6.0",
+    "bootstrap": "~3.3.5",
+    "swipebox": "~1.4.1"
+  }
+}
