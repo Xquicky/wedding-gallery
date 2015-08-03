@@ -1,4 +1,17 @@
-<h1>Hello, {{name}}!</h1><br/>
-{{#each data.thumbnails}}
-  <img src="images/thumbnails/{{.}}" alt="test">
-{{/each}}
+<div id="wedding-gallery" >
+  {{#each data.images}}
+    <a class="wedding-photos" href="{{photo}}">
+      <img alt="{{title}}" src="{{thumb}}"/>
+    </a>
+  {{/each}}
+</div>
+
+<script type="text/javascript">
+  $("#wedding-gallery").justifiedGallery({
+    rowHeight : 180,
+    lastRow : 'nojustify',
+    margins : 3
+  }).on('jg.complete', function () {
+    $('#wedding-gallery a').swipebox();
+  });
+</script>

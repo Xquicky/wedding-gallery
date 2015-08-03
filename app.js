@@ -20,11 +20,9 @@ initControllers(app);
 //init images
 initImages();
 
-app.get('/', function(req, res) { res.render('index'); });
-
 // run server
 var server = app.listen(2368, function () {
   var host = server.address().address;
   var port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Wedding app listening at http://%s:%s', host, port);
 });
