@@ -13,15 +13,3 @@ $('a').click(function (event) {
 	var url = $(this).attr('href');
 	loadTemplate(url);
 });
-
-$(document).ready(
-	function() {
-		$("#wedding-gallery").justifiedGallery({
-		  rowHeight : 180,
-		  lastRow : 'nojustify',
-		  margins : 3
-		}).on('jg.complete', function () {
-		  $('#wedding-gallery a').swipebox();
-		});
-	}
-);
