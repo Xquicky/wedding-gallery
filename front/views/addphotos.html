@@ -1,0 +1,22 @@
+<button name="plus-button" class="add-photo-button">+</button>
+
+<div class="popin-photo-form">
+  <form action="/savePhotos" method="post" enctype="multipart/form-data">
+    <input id="add-photos-input" type="file" class="file" name="postPhoto">
+  </form>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(
+    function() {
+      $("#add-photos-input").fileinput({
+        'showUpload':false,
+        'previewFileType':'any',
+        'multiple': true,
+        'uploadAsync': true
+      });
+    }
+  );
+
+  $(".popin-photo").click()
+</script>

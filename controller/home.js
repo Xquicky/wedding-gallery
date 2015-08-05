@@ -3,8 +3,8 @@ var fs = require('fs');
 var _ = require('lodash');
 var Controller = require('./Controller');
 
-var Home = new Controller(['/', '/home'], 'get', path.basename(__filename, '.js'));
-Home.specific = function(req, res, callback) {
+var home = new Controller(['/', '/home'], 'get', path.basename(__filename, '.js'));
+home.specific = function(req, res, callback) {
 
   fs.readdir(__dirname + '/../images/photos', function (err, files) {
     if(err) {
@@ -29,4 +29,4 @@ Home.specific = function(req, res, callback) {
   });
 };
 
-module.exports = Home;
+module.exports = home;

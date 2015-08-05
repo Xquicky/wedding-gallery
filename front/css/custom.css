@@ -1,5 +1,95 @@
+html, body, #content {
+  width: 100%;
+  height: 100%
+}
+
 .blueimp-gallery>.indicator>li {
   width: 30px;
   height: 30px;
   border-radius: 15px;
+}
+
+.add-photo-button {
+  background-color: #CD0000;
+  color: #F3F3F3;
+  outline : 0;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-family: Verdana;
+  font-size: 1.5em;
+  z-index: 99 !important;
+  border: 0px;
+  box-shadow: 2px 3px 2px 0px #656565;
+  -moz-box-shadow: 2px 3px 2px 0px #656565;
+  -webkit-box-shadow: 2px 3px 2px 0px #656565;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.add-photo-button:hover {
+  background-color: #b40000;
+}
+
+.popin-photo {
+  position: absolute;
+  display: none;
+  width: inherit;
+  height: inherit;
+  max-width: 400px;
+  max-height: 263px;
+  background-color: #F2F2F2;
+  border: 1px solid black;
+  z-index: 100 !important;
+  bottom: 100px;
+  right: 30px;
+  box-shadow: 2px 3px 2px 0px #656565;
+  -moz-box-shadow: 2px 3px 2px 0px #656565;
+  -webkit-box-shadow: 2px 3px 2px 0px #656565;
+  border-radius: 5px;
+}
+
+.popin-photo::before {
+  content: "";
+  position: absolute;
+  box-shadow: 3px 3px 4px 1px #656565;
+  -moz-box-shadow: 3px 3px 4px 1px #656565;
+  -webkit-box-shadow: 3px 3px 4px 1px #656565;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  bottom: -10px;
+  right: 14px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #F2F2F2 #F2F2F2 transparent;
+}
+
+.photo-form {
+  max-width: 400px;
+  max-height: 263px;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  margin-right: 2px;
+  margin-left: 2px;
+  bottom: 2px;
+}
+
+.file-drop-zone {
+  height: 180px !important;
+  line-height: 2;
+  background-color: white;
+}
+
+.file-drop-zone-title {
+  padding: 0px 0px !important;
+}
+
+.file-caption {
+  background-color: white;
 }
