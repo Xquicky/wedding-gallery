@@ -13,7 +13,7 @@ html, body, #content {
   background-color: #CD0000;
   color: #F3F3F3;
   outline : 0;
-  position: absolute;
+  position: fixed;
   bottom: 30px;
   right: 30px;
   width: 50px;
@@ -36,7 +36,7 @@ html, body, #content {
 }
 
 .popin-photo {
-  position: absolute;
+  position: fixed;
   display: none;
   width: inherit;
   height: inherit;
