@@ -98,3 +98,7 @@ html, body, #content {
   height: auto;
   width: 80px;
 }
+
+.file-caption-name {
+  display: none !important;
+}

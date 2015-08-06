@@ -1,5 +1,7 @@
 var engines = require('consolidate');
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var initControllers = require('./setup/initControllers');
 var initImages = require('./setup/initImages');
 
@@ -13,7 +15,7 @@ app.set('views', __dirname + '/front/views');
 app.use('/front', express.static(__dirname + '/front'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/images', express.static(__dirname + '/images'));
-
+app.use(bodyParser.urlencoded({ extended: false }));
 // init controller
 initControllers(app);
 

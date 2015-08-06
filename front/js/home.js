@@ -8,6 +8,7 @@ $(document).ready(
     });
 
     $("#add-photos-input").fileinput({
+      showCaption: false,
       previewFileType:'image',
       multiple: true,
       uploadAsync: true,
@@ -16,10 +17,11 @@ $(document).ready(
       allowedPreviewTypes: ['image'],
       previewSettings: {
         image: {
-          width: '10px',
-          height: '10px'
+          width: '80px',
+          height: '80px'
         }
-      }
+      },
+      browseLabel: 'Ajouter'
     });
   }
 );
