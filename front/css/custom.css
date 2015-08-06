@@ -69,8 +69,8 @@ html, body, #content {
 }
 
 .photo-form {
-  max-width: 400px;
-  max-height: 263px;
+  width: 396px;
+  height: 255px;
   line-height: normal;
   text-align: center;
   vertical-align: middle;
@@ -82,7 +82,7 @@ html, body, #content {
 
 .file-drop-zone {
   height: 180px !important;
-  line-height: 2;
+  overflow: auto;
   background-color: white;
 }
 
@@ -95,10 +95,36 @@ html, body, #content {
 }
 
 .file-preview-frame {
-  height: auto;
-  width: 80px;
+  width: 315px !important;
+  height: auto !important;
+  text-align: left !important;
+}
+.file-preview-frame>img {
+  display: none;
 }
 
 .file-caption-name {
-  display: none !important;
+  width: auto !important;
+  float: left;
+}
+
+.kv-upload-progress {
+    position: absolute;
+    bottom: 43px;
+    left: 20px;
+    width: 355px;
+}
+
+.progress {
+  height: 10px;
+  margin-bottom: 0px;
+}
+
+.progress-bar {
+  line-height: normal;
+  font-size: 9px;
+}
+
+.file-preview-frame.disabled {
+  display: none;
 }

@@ -9,19 +9,15 @@ $(document).ready(
 
     $("#add-photos-input").fileinput({
       showCaption: false,
-      previewFileType:'image',
       multiple: true,
       uploadAsync: true,
       uploadUrl: '/savePhotos',
+      previewFileType:'image',
       allowedFileTypes: ['image'],
       allowedPreviewTypes: ['image'],
-      previewSettings: {
-        image: {
-          width: '80px',
-          height: '80px'
-        }
-      },
-      browseLabel: 'Ajouter'
+      browseLabel: 'Ajouter',
+      dropZoneTitle: 'Déposer vos fichiers',
+      msgInvalidFileType: 'Fichier "{name}" du mauvais type. Seul le type "{types}" est accepté.'
     });
   }
 );
