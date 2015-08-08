@@ -6,6 +6,7 @@ var initControllers = require('./setup/initControllers');
 var initImages = require('./setup/initImages');
 
 var app = express();
+
 app.engine('.html', engines.handlebars);
 app.set('view engine', 'html');
 app.set("view options", { layout: true });
@@ -23,7 +24,7 @@ initControllers(app);
 initImages();
 
 // run server
-var server = app.listen(2368, function () {
+var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Wedding app listening at http://%s:%s', host, port);
