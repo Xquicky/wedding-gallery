@@ -1,6 +1,8 @@
 var engines = require('consolidate');
 var express = require('express');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var uuid = require('uuid');
 
 var initControllers = require('./setup/initControllers');
 var initImages = require('./setup/initImages');
@@ -16,7 +18,16 @@ app.set('views', __dirname + '/front/views');
 app.use('/front', express.static(__dirname + '/front'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/images', express.static(__dirname + '/images'));
+
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(session({
+  genid: uuid.v4,
+  secret: 'wedding',
+  resave: false,
+  saveUninitialized: false
+}));
+
 // init controller
 initControllers(app);
 
